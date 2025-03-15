@@ -28,7 +28,7 @@ class ReviewController extends Controller
             'created_date' => 'required|date'
         ]);
 
-        $review = Reviews::create($request->all());
+        $review = Review::create($request->all());
 
         return response()->json([
             'status' => 201,
@@ -39,7 +39,7 @@ class ReviewController extends Controller
 
     public function show($id)
     {
-        $review = Reviews::find($id);
+        $review = Review::find($id);
 
         if (!$review) {
             return response()->json([
@@ -58,7 +58,7 @@ class ReviewController extends Controller
 
     public function update(Request $request, $id)
     {
-        $review = Reviews::find($id);
+        $review = Review::find($id);
 
         if (!$review) {
             return response()->json([
@@ -87,7 +87,7 @@ class ReviewController extends Controller
 
     public function destroy($id)
     {
-        $review = Reviews::find($id);
+        $review = Review::find($id);
 
         if (!$review) {
             return response()->json([

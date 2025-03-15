@@ -26,6 +26,6 @@ class User2 extends Model
 
     public function review()
     {
-        return $this->hasMany(Reviews::class);
+        return $this->hasMany(Review::class);
     }
 }
